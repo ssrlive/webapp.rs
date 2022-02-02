@@ -39,7 +39,7 @@ impl Server {
     /// Create a new server instance
     pub fn from_config(config: &Config) -> Result<Self> {
         // Build a new actor system
-        let runner = actix::System::new("backend");
+        let runner = actix::System::new();
 
         // Start database executor actors
         let database_url = format!(
@@ -119,7 +119,7 @@ impl Server {
 
             // Create a separate thread for redirecting
             thread::spawn(move || {
-                let system = actix::System::new("redirect");
+                let system = actix::System::new();
                 let url = server_url.clone();
 
                 // Create redirecting server

@@ -49,6 +49,7 @@ This installs build requirements, rust and wasm-pack, on Ubuntu or Debian.
 ```console
 > sudo apt-get update
 > sudo apt-get install -y pkg-config libssl-dev npm sudo wget
+> sudo apt-get install -y postgresql postgresql-contrib postgresql-client libpq-dev
 > wget https://sh.rustup.rs -O rustup-init
 > sudo sh rustup-init -y
 > sudo cargo install wasm-pack
